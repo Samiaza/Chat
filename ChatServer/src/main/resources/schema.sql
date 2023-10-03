@@ -1,0 +1,24 @@
+DROP TABLE IF EXISTS users, chatrooms, messages CASCADE;
+
+CREATE TABLE IF NOT EXISTS users
+(
+    id       BIGSERIAL PRIMARY KEY,
+    login    VARCHAR NOT NULL UNIQUE,
+    password VARCHAR NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS chatrooms
+(
+    id      BIGSERIAL PRIMARY KEY,
+    name    VARCHAR NOT NULL UNIQUE,
+    creator BIGINT REFERENCES users
+);
+
+CREATE TABLE IF NOT EXISTS messages
+(
+    id     BIGSERIAL PRIMARY KEY,
+    author BIGINT REFERENCES users,
+    room   BIGINT REFERENCES chatrooms,
+    text   TEXT,
+    datetime TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
