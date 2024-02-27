@@ -1,9 +1,9 @@
 # Chat
-Client/Server application based on Java-Sockets API
+Client-Server application based on Java-Sockets API
 
 ## Введение
 
-Этот проект представляет собой консольное приложение для чата, реализованное с использованием Java-Sockets API, Spring Framework, Spring Security, PostgreSQL через HikariCP.
+Этот проект представляет собой консольное Client-Server чат-приложение, реализованное с использованием Java-Sockets API, Spring Framework, Spring Security, PostgreSQL через HikariCP.
 Оно состоит из двух основных компонентов: сервера и клиента.
 Сервер принимает подключения от клиентов и обрабатывает сообщения, отправляемые между клиентами.
 
